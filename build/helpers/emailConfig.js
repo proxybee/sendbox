@@ -21,3 +21,4 @@ var transporter = _nodemailer["default"].createTransport({
 
 var _default = transporter;
 exports["default"] = _default;
+//# sourceMappingURL=emailConfig.js.map

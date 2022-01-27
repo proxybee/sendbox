@@ -23,3 +23,4 @@ module.exports = {
     template: './src/index.html'
   })]
 };
+//# sourceMappingURL=webpack.config.js.map

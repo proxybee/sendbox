@@ -4,6 +4,8 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _express = _interopRequireDefault(require("express"));
 
+var _path = _interopRequireDefault(require("path"));
+
 var _debug = _interopRequireDefault(require("debug"));
 
 var _dotenv = _interopRequireDefault(require("dotenv"));
@@ -31,12 +33,11 @@ _dotenv["default"].config();
 
 var app = (0, _express["default"])();
 var debug = (0, _debug["default"])('index');
-var port = process.env.PORT;
 app.use((0, _morgan["default"])('tiny'));
 app.use(_express["default"].json()); // For JSON requests
 
 app.use(_express["default"].urlencoded({
-  extended: true
+  extended: false
 }));
 app.use((0, _helmet["default"])());
 app.use((0, _cookieParser["default"])());
@@ -51,6 +52,7 @@ app.use((0, _expressSession["default"])({
 
 })); // app.use(bodyParser.urlencoded({ extended: false }))
 
+app.set('views', _path["default"].join(__dirname, 'views'));
 app.use((0, _cors["default"])({
   origin: '*',
   methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
@@ -74,11 +76,12 @@ app.use('/api/v1/users', _users["default"]); // app.use('/docs', swagger.serve, 
 app.use(function (err, req, res, next) {
   debug(err.stack);
   res.status(500);
-  res.render('There was an Error processing your request. Something"s broken! to Fix it!!! update your data and try again', {
+  res.render('There was an Error processing your request. Something"s broken! to Fix it!!!', {
     error: err
   });
   next();
 });
+var port = process.env.PORT;
 var server = app.listen(port, function () {
   debug("App running on port ".concat(port, "."));
 });
@@ -91,3 +94,4 @@ process.on('SIGTERM', function () {
 process.on('uncaughtException', function () {
   return server.close();
 });
+//# sourceMappingURL=index.js.map

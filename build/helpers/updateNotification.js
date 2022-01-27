@@ -36,3 +36,4 @@ var sendUpdateEmail = function sendUpdateEmail(email) {
 
 var _default = sendUpdateEmail;
 exports["default"] = _default;
+//# sourceMappingURL=updateNotification.js.map
