@@ -69,7 +69,6 @@ const server = app.listen(port, () => {
   debug(`App running on port ${port}.`);
 });
 
-// module.exports = app;
 process.on('exit', () => server.close());
 process.on('SIGTERM', () => server.close());
 process.on('uncaughtException', () => server.close());

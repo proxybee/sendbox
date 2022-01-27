@@ -68,23 +68,23 @@ app.get('/', function (req, res) {
 app.use('/api/v1/auth', _auth["default"]);
 app.use('/api/v1/parcels', _parcels["default"]);
 app.use('/api/v1/users', _users["default"]); // app.use('/docs', swagger.serve, swagger.setup(swaggerDocument));
-// eslint-disable-next-line no-unused-vars
-// app.get((err, req, res, next) => {
-//   res.status(500).send('Something is broken! Fix it!!!');
+
+app.get(function (err, req, res, next) {
+  res.status(500).send('Something is broke!', err);
+  next();
+}); // app.use((err, req, res, next) => {
+//   debug(err.stack);
+//   res.status(500);
+//   res.render('There was an Error processing your request. Something"s broken! Fix it!!!',
+//  { error: err });
+//   next();
 // });
 
-app.use(function (err, req, res, next) {
-  debug(err.stack);
-  res.status(500);
-  res.render('There was an Error processing your request. Something"s broken! to Fix it!!!', {
-    error: err
-  });
-  next();
-});
 var port = process.env.PORT;
 var server = app.listen(port, function () {
   debug("App running on port ".concat(port, "."));
-});
+}); // module.exports = app;
+
 process.on('exit', function () {
   return server.close();
 });
