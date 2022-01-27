@@ -31,7 +31,7 @@ _dotenv["default"].config();
 
 var app = (0, _express["default"])();
 var debug = (0, _debug["default"])('index');
-var port = process.env.Port;
+var port = process.env.PORT;
 app.use((0, _morgan["default"])('tiny'));
 app.use(_express["default"].json()); // For JSON requests
 
@@ -79,12 +79,16 @@ app.use(function (err, req, res, next) {
   });
   next();
 });
-app.listen(port, function () {
+var server = app.listen(port, function () {
   debug("App running on port ".concat(port, "."));
-}); // const server = app.listen(port, () => {
-//   debug(`App running on port ${port}.`);
-// });
-// process.on('exit', () => server.close());
-// process.on('SIGTERM', () => server.close());
-// process.on('uncaughtException', () => server.close());
+});
+process.on('exit', function () {
+  return server.close();
+});
+process.on('SIGTERM', function () {
+  return server.close();
+});
+process.on('uncaughtException', function () {
+  return server.close();
+});
 //# sourceMappingURL=index.js.map

@@ -11,9 +11,7 @@ var _pg = require("pg");
 
 var _dotenv = _interopRequireDefault(require("dotenv"));
 
-_dotenv["default"].config(); // const constring = process.env.DB_URL;
-// const pool = new Pool.Client(constring);
-
+_dotenv["default"].config();
 
 var pool = new _pg.Pool({
   connectionString: process.env.DB_URL
@@ -29,7 +27,7 @@ pool.connect(function (err) {
     } else {
       console.log(result.rows[0].theTime);
     }
-  });
+  }); // pool.end();
 });
 var _default = {
   query: function query(text, params) {

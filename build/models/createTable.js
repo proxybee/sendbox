@@ -1,6 +1,6 @@
 "use strict";
 
-require("./userTable");
-
 require("./percelTable");
+
+require("./userTable");
 //# sourceMappingURL=createTable.js.map

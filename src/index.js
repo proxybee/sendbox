@@ -18,7 +18,7 @@ dotenv.config();
 
 const app = express();
 const debug = Debug('index');
-const port = process.env.Port;
+const port = process.env.PORT;
 
 app.use(morgan('tiny'));
 app.use(express.json()); // For JSON requests
@@ -61,7 +61,7 @@ app.use((err, req, res, next) => {
   next();
 });
 
-const server = app.listen(process.env.PORT || port, () => {
+const server = app.listen(port, () => {
   debug(`App running on port ${port}.`);
 });
 
