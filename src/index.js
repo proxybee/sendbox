@@ -52,7 +52,7 @@ app.use('/api/v1/users', userRoute);
 // app.use('/docs', swagger.serve, swagger.setup(swaggerDocument));
 
 app.get((err, req, res, next) => {
-  res.status(500).send('Something broke!', err);
+  res.status(500).send('Something is broke!', err);
   next();
 });
 // app.use((err, req, res, next) => {
@@ -65,11 +65,11 @@ app.get((err, req, res, next) => {
 
 const port = process.env.PORT;
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   debug(`App running on port ${port}.`);
 });
 
 // module.exports = app;
-// process.on('exit', () => server.close());
-// process.on('SIGTERM', () => server.close());
-// process.on('uncaughtException', () => server.close());
+process.on('exit', () => server.close());
+process.on('SIGTERM', () => server.close());
+process.on('uncaughtException', () => server.close());
