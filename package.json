@@ -38,6 +38,7 @@
   "dependencies": {
     "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
     "@types/uuid": "^8.3.4",
     "bcrypt": "^5.0.1",
     "chalk": "^5.0.0",
@@ -62,7 +63,6 @@
     "@babel/node": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.16.7",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.16.7",
     "@babel/runtime": "^7.16.7",
     "babel-loader": "^8.2.3",
     "babel-preset-airbnb": "^5.0.0",
