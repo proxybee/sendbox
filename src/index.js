@@ -52,11 +52,16 @@ app.use('/api/v1/users', userRoute);
 // app.use('/docs', swagger.serve, swagger.setup(swaggerDocument));
 
 app.use((err, req, res, next) => {
-  debug(err.stack);
-  res.status(500);
-  res.render('There was an Error processing your request. Something"s broken! to Fix it!!!', { error: err });
+  res.status(500).send('Something broke!', err);
   next();
 });
+// app.use((err, req, res, next) => {
+//   debug(err.stack);
+//   res.status(500);
+//   res.render('There was an Error processing your request. Something"s broken! Fix it!!!',
+//  { error: err });
+//   next();
+// });
 
 const port = process.env.PORT;
 
