@@ -61,14 +61,10 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(port, () => {
+const server = app.listen(process.env.PORT || port, () => {
   debug(`App running on port ${port}.`);
 });
 
-// const server = app.listen(port, () => {
-//   debug(`App running on port ${port}.`);
-// });
-
-// process.on('exit', () => server.close());
-// process.on('SIGTERM', () => server.close());
-// process.on('uncaughtException', () => server.close());
+process.on('exit', () => server.close());
+process.on('SIGTERM', () => server.close());
+process.on('uncaughtException', () => server.close());
