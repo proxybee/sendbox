@@ -22,4 +22,3 @@ router.get('/:id/parcels', _auth["default"].verifyToken, _UsersController["defau
 router.post('/:id/makeadmin', _auth["default"].verifyToken, _UsersController["default"].makeAdmin);
 var _default = router;
 exports["default"] = _default;
-//# sourceMappingURL=users.js.map

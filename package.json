@@ -8,11 +8,11 @@
     "npm": "8.3.0"
   },
   "scripts": {
-    "start": "npm run build && node ./build/index.js",
+    "compile": "babel src -d build",
+    "start": "npm run compile && node ./build/index.js",
     "start:dev": "nodemon --ignore ./public --exec ./node_modules/.bin/babel-node ./src/index.js",
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build ./src -s",
-    "build": "npm run clean && npm run build-babel",
+    "build": "npm run clean && npm run compile",
     "debug": "set DEBUG=index & npm run start:dev",
     "lint": "eslint ./src/index.js",
     "createTable": "babel-node ./src/models/createTable.js --exit",

@@ -91,4 +91,3 @@ process.on('SIGTERM', function () {
 process.on('uncaughtException', function () {
   return server.close();
 });
-//# sourceMappingURL=index.js.map

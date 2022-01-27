@@ -36,4 +36,3 @@ var postUserVerification = function postUserVerification(req, res) {
 
 var _default = postUserVerification;
 exports["default"] = _default;
-//# sourceMappingURL=userVerification.js.map

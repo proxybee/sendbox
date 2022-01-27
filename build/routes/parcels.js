@@ -25,4 +25,3 @@ router.patch('/:id/location', _auth["default"].verifyToken, _ParcelsController["
 router.patch('/:id/status', _auth["default"].verifyToken, _ParcelsController["default"].changeStatus);
 var _default = router;
 exports["default"] = _default;
-//# sourceMappingURL=parcels.js.map

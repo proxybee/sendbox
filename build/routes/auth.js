@@ -22,4 +22,3 @@ router.post('/signup', _UsersController["default"].signup);
 router.post('/login', _UsersController["default"].login);
 var _default = router;
 exports["default"] = _default;
-//# sourceMappingURL=auth.js.map

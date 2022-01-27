@@ -287,4 +287,3 @@ var User = /*#__PURE__*/function () {
 
 var _default = User;
 exports["default"] = _default;
-//# sourceMappingURL=UsersController.js.map

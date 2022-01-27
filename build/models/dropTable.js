@@ -11,4 +11,3 @@ _index["default"].query(queryText).then(function () {
 })["catch"](function (err) {
   console.log(err, 'error occurred while dropping tables', _index["default"]); // db.end();
 });
-//# sourceMappingURL=dropTable.js.map

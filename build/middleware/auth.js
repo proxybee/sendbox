@@ -56,4 +56,3 @@ var Auth = /*#__PURE__*/function () {
 
 var _default = Auth;
 exports["default"] = _default;
-//# sourceMappingURL=auth.js.map

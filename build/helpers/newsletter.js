@@ -34,4 +34,3 @@ var postNewsletter = function postNewsletter(req, res) {
 
 var _default = postNewsletter;
 exports["default"] = _default;
-//# sourceMappingURL=newsletter.js.map

@@ -13,4 +13,3 @@ var userQuery = "CREATE TABLE IF NOT EXISTS\n      users(\n        id UUID PRIMA
     console.log('An error occurred while creating users:', err);
   });
 })();
-//# sourceMappingURL=userTable.js.map

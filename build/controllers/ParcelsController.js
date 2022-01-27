@@ -391,4 +391,3 @@ var Parcels = /*#__PURE__*/function () {
 
 var _default = Parcels;
 exports["default"] = _default;
-//# sourceMappingURL=ParcelsController.js.map
