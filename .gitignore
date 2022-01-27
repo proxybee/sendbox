@@ -4,3 +4,4 @@ build
 coverage
 .env
 Resource.md
+Procfile
