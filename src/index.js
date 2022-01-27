@@ -4,7 +4,7 @@ import Debug from 'debug';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import helmet from 'helmet';
-import session from 'express-session';
+// import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
@@ -25,12 +25,12 @@ app.use(express.json()); // For JSON requests
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(cookieParser());
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  cookie: { maxAge: 60000 },
-  resave: false, // forces the session to be saved back to the store
-  saveUninitialized: false, // dont save unmodified
-}));
+// app.use(session({
+//   secret: process.env.SESSION_SECRET,
+//   cookie: { maxAge: 60000 },
+//   resave: false, // forces the session to be saved back to the store
+//   saveUninitialized: false, // dont save unmodified
+// }));
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(
@@ -57,7 +57,7 @@ app.use('/api/v1/users', userRoute);
 app.use((err, req, res, next) => {
   debug(err.stack);
   res.status(500);
-  res.render('There was an Error processing your request. Something"s broken! to Fix it!!! update your data and try again', { error: err });
+  res.render('There was an Error processing your request. Something"s broken! to Fix it!!!', { error: err });
   next();
 });
 
