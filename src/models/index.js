@@ -2,8 +2,6 @@ import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
 dotenv.config();
-// const constring = process.env.DB_URL;
-// const pool = new Pool.Client(constring);
 const pool = new Pool({
   connectionString: process.env.DB_URL,
 });
@@ -18,6 +16,7 @@ pool.connect((err) => {
       console.log(result.rows[0].theTime);
     }
   });
+  // pool.end();
 });
 
 export default {

@@ -1,2 +1,2 @@
-import './userTable';
 import './percelTable';
+import './userTable';

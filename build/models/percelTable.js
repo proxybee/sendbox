@@ -11,5 +11,5 @@ setTimeout(function () {
   })["catch"](function (err) {
     console.log('An error occurred while creating parcels table: ', err);
   });
-}, 200);
+}, 100);
 //# sourceMappingURL=percelTable.js.map

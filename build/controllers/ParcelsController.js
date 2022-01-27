@@ -59,7 +59,6 @@ var Parcels = /*#__PURE__*/function () {
         });
       }
 
-      console.log(newOrder);
       var createQuery = "INSERT INTO parcels (id,senderId,weight,weightMetric,status,fromAddress,toAddress,currentLocation,itemName,recipient,postDate) \n                  VALUES('".concat(newOrder.id, "','").concat(newOrder.senderId, "','").concat(newOrder.weight, "','").concat(newOrder.weightMetric, "','").concat(newOrder.status, "','").concat(newOrder.fromAddress, "'\n                  ,'").concat(newOrder.toAddress, "','").concat(newOrder.currentLocation, "','").concat(newOrder.itemName, "','").concat(newOrder.recipient, "','").concat(newOrder.postDate, "') returning *");
 
       _index["default"].query(createQuery).then(function (result) {

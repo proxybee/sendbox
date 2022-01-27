@@ -16,10 +16,7 @@ _dotenv["default"].config(); // const constring = process.env.DB_URL;
 
 
 var pool = new _pg.Pool({
-  connectionString: process.env.DB_URL // ssl: {
-  //   rejectUnauthorized: false,
-  // },
-
+  connectionString: process.env.DB_URL
 });
 pool.connect(function (err) {
   if (err) {
